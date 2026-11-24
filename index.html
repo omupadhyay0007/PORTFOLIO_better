@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="S&AI Engineering Portfolio of Om Upadhyay - Academic background, skills, open-source S&AI contributions, projects, and verified achievements." />
+  <title>Om Upadhyay | S&amp;AI Engineering Portfolio</title>
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --tag-bg: #e0e7ff;
+      --tag-text: #3730a3;
+      --success-bg: #ecfdf5;
+      --success-text: #065f46;
+      --radius: 8px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
+      padding: 0;
+    }
+
+    /* Navigation */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .nav-container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1050px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 3rem 1.5rem;
+    }
+
+    /* Section Styling */
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* 1. About Me */
+    .about-bio {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #374151;
+    }
+
+    /* 2. Skills */
+    .skills-category {
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #1f2937;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+
+    .skill-pill:hover {
+      background: var(--primary-light);
+      border-color: #bfdbfe;
+      color: var(--primary);
+    }
+
+    .skill-pill .proof-link {
+      font-size: 0.75rem;
+      color: var(--primary);
+      background: #ffffff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid #dbeafe;
+    }
+
+    /* 3. S&AI Contributions */
+    .repo-banner {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      padding: 0.85rem 1.25rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .pr-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      background: #fafafa;
+    }
+
+    .pr-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .pr-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .task-id {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .pr-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .pr-detail-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0.5rem 1rem;
+      font-size: 0.92rem;
+      margin-top: 0.5rem;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* 4. Projects */
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tech-stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0;
+    }
+
+    .tech-tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .project-meta-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0.75rem 1rem;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    /* 5. Education & Achievements */
+    .timeline-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+
+    .degree-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .timeline-date {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .institution-name {
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card {
+      background: var(--success-bg);
+      border: 1px solid #a7f3d0;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .achievement-title {
+      font-weight: 600;
+      color: var(--success-text);
+      margin-bottom: 0.25rem;
+    }
+
+    /* 6. Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .contact-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      text-align: center;
+      background: #fafafa;
+    }
+
+    .contact-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .contact-card a {
+      font-size: 1rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    @media (max-width: 640px) {
+      .project-meta-grid, .pr-detail-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#about" class="nav-brand">Om Upadhyay | Portfolio</a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#sai-contributions">S&amp;AI Contributions</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education &amp; Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- SECTION 1: ABOUT ME (1 Mark) -->
+    <!-- Rubric: 3-5 sentences detailing degree program, current academic year, areas of technical focus, and professional objectives. -->
+    <section id="about">
+      <h2>
+        1. About Me
+      </h2>
+      <div class="about-bio">
+        <p>
+          I am currently a <strong>first-year Bachelor of Technology (B.Tech) student at Newton School of Technology</strong>, with a strong interest in technology, software development, and emerging innovations.
+          My areas of interest include <strong>Artificial Intelligence, Machine Learning, Data Structures and Algorithms, and Software Development</strong>.
+        </p>
+        <p>
+          I am passionate about exploring new technologies, strengthening my problem-solving abilities, and transforming ideas into practical solutions.
+          I continuously strive to expand my technical knowledge through hands-on projects, collaborative learning, and experimentation.
+        </p>
+        <p>
+          My goal is to develop into a skilled software engineer who can build innovative, efficient, and impactful technological solutions while continuously learning and adapting to the evolving world of technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SKILLS (1.5 Marks) -->
+    <!-- Rubric: Categorized technical skills. Each entry must link directly to relevant project code or pull requests demonstrating applied experience. -->
+    <section id="skills">
+      <h2>
+        2. Technical Skills
+      </h2>
+
+      <!-- Category: Programming Languages -->
+      <div class="skills-category">
+        <div class="category-title">Programming Languages</div>
+        <div class="skills-grid">
+          <a class="skill-pill" href="#pr-75">
+            <span>Python</span>
+            <span class="proof-link">Applied in S&amp;AI PRs &rarr;</span>
+          </a>
+          <a class="skill-pill" href="#project-1">
+            <span>HTML / CSS</span>
+            <span class="proof-link">Applied in Project 1 &rarr;</span>
+          </a>
+          <a class="skill-pill" href="#project-1">
+            <span>JavaScript</span>
+            <span class="proof-link">Applied in Project 1 &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category: Frameworks & Libraries -->
+      <div class="skills-category">
+        <div class="category-title">Frameworks &amp; Libraries</div>
+        <div class="skills-grid">
+          <a class="skill-pill" href="#pr-69">
+            <span>Flask</span>
+            <span class="proof-link">Applied in PR #69 &rarr;</span>
+          </a>
+          <a class="skill-pill" href="#project-1">
+            <span>Transformers.js</span>
+            <span class="proof-link">Applied in Project 1 &rarr;</span>
+          </a>
+          <a class="skill-pill" href="#pr-71">
+            <span>Python unittest / WSGI</span>
+            <span class="proof-link">Applied in PR #71 &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category: Tools & Infrastructure -->
+      <div class="skills-category">
+        <div class="category-title">Developer Tools &amp; Infrastructure</div>
+        <div class="skills-grid">
+          <a class="skill-pill" href="#sai-contributions">
+            <span>Git &amp; GitHub</span>
+            <span class="proof-link">Applied in S&amp;AI Contributions &rarr;</span>
+          </a>
+          <a class="skill-pill" href="#project-1">
+            <span>Vercel Deployment</span>
+            <span class="proof-link">Applied in Project 1 &rarr;</span>
+          </a>
+          <a class="skill-pill" href="#pr-67">
+            <span>Decimal &amp; Boundary Testing</span>
+            <span class="proof-link">Applied in PR #67 &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: S&AI OPEN-SOURCE CONTRIBUTIONS (3 Marks) -->
+    <!-- Rubric: Name of S&AI-Projects repository alongside direct hyperlinks to all submitted pull requests. 
+         Each entry must specify: Task ID, Description of code modifications, and Technical rationale. -->
+    <section id="sai-contributions">
+      <h2>
+        3. S&amp;AI Open-Source Contributions
+      </h2>
+      
+      <div class="repo-banner">
+        <strong>Course Repository:</strong> 
+        <a href="https://github.com/S-AI-Projects/30-Days-Of-Python" target="_blank" rel="noopener noreferrer">
+          https://github.com/S-AI-Projects/30-Days-Of-Python
+        </a>
+        <br />
+        <span style="font-size: 0.85rem; color: var(--text-muted);">
+          Official GitHub profile verified: <a href="https://github.com/omupadhyay0007" target="_blank" rel="noopener noreferrer">@omupadhyay0007</a>
+        </span>
+      </div>
+
+      <div class="pr-card" id="pr-75">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T020</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/75" target="_blank" rel="noopener noreferrer">Pull Request #75 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Added an even-integer-to-square list-comprehension lab, lesson link, README, unit tests, and captured evidence.</div><div class="detail-label">Technical Rationale:</div><div>The lab demonstrates filtering and transformation without mutating input while providing repeatable tests and evidence for the lesson.</div></div>
+      </div>
+      <div class="pr-card" id="pr-74">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T019</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/74" target="_blank" rel="noopener noreferrer">Pull Request #74 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Added a shipping-cost applied lab covering 49.99, 50, 99.99, 100, and negative values, with documentation and tests.</div><div class="detail-label">Technical Rationale:</div><div>The implementation makes threshold behavior explicit and prevents invalid negative totals from producing a shipping cost.</div></div>
+      </div>
+      <div class="pr-card" id="pr-73">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T018</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/73" target="_blank" rel="noopener noreferrer">Pull Request #73 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Built an in-memory document-store lab with insert, find, update, duplicate-ID rejection, tests, README, and evidence.</div><div class="detail-label">Technical Rationale:</div><div>An injected in-memory adapter demonstrates document operations and recovery without falsely representing a real MongoDB deployment.</div></div>
+      </div>
+      <div class="pr-card" id="pr-72">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T017</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/72" target="_blank" rel="noopener noreferrer">Pull Request #72 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Added text normalization through composed strip, lowercase, and whitespace-collapse functions, with fixture and idempotence tests.</div><div class="detail-label">Technical Rationale:</div><div>Function composition separates each transformation and verifies that applying the pipeline repeatedly produces stable output.</div></div>
+      </div>
+      <div class="pr-card" id="pr-71">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T016</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/71" target="_blank" rel="noopener noreferrer">Pull Request #71 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Added a standard-library WSGI in-memory items API and loopback HTTP tests for POST, GET, malformed JSON, and unsupported methods.</div><div class="detail-label">Technical Rationale:</div><div>Dependency injection and real loopback requests isolate storage behavior and verify HTTP status and JSON contracts.</div></div>
+      </div>
+      <div class="pr-card" id="pr-70">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T015</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/70" target="_blank" rel="noopener noreferrer">Pull Request #70 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Added deterministic set intersection, difference, and union examples using JSON fixtures and independent tests.</div><div class="detail-label">Technical Rationale:</div><div>Fixtures provide stable inputs while set operations demonstrate expected membership behavior independently of external state.</div></div>
+      </div>
+      <div class="pr-card" id="pr-69">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T014</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/69" target="_blank" rel="noopener noreferrer">Pull Request #69 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Added a pure JSON sum handler and Flask POST adapter with tests for valid, missing, string, boolean, and decimal values.</div><div class="detail-label">Technical Rationale:</div><div>The stateless handler separates validation from the web adapter and verifies behavior across valid and invalid requests.</div></div>
+      </div>
+      <div class="pr-card" id="pr-68">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T013</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/68" target="_blank" rel="noopener noreferrer">Pull Request #68 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Implemented word counting with lowercase normalization, boundary punctuation stripping, and internal-apostrophe retention.</div><div class="detail-label">Technical Rationale:</div><div>The implementation documents and tests ambiguous string cases while keeping the original lesson exercises unchanged.</div></div>
+      </div>
+      <div class="pr-card" id="pr-67">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T012</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/67" target="_blank" rel="noopener noreferrer">Pull Request #67 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Implemented decimal discount calculation with currency rounding, inclusive 0-100 percent bounds, and invalid-input checks.</div><div class="detail-label">Technical Rationale:</div><div>Decimal arithmetic avoids binary floating-point currency errors and explicit validation prevents out-of-range discounts.</div></div>
+      </div>
+      <div class="pr-card" id="pr-66">
+        <div class="pr-header"><span class="task-id">Task ID: R27-T011</span><a href="https://github.com/S-AI-Projects/30-Days-Of-Python/pull/66" target="_blank" rel="noopener noreferrer">Pull Request #66 &nearr;</a></div>
+        <div class="pr-detail-grid"><div class="detail-label">Code Modifications:</div><div>Added an installable standard-library text-statistics module, isolated-environment tests, documentation, and evidence.</div><div class="detail-label">Technical Rationale:</div><div>Package installation and isolated execution verify that the module works without undeclared runtime dependencies.</div></div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: PROJECTS (2.5 Marks) -->
+    <!-- Rubric: Detailed overviews of at least two technical projects. 
+         Each must cover: Problem statement, Solution architecture, Tech stack used, Individual contribution (for team efforts), and Repository link with documentation. -->
+    <section id="projects">
+      <h2>
+        4. Technical Projects
+      </h2>
+
+      <!-- Project 1 -->
+      <div class="project-card" id="project-1">
+        <div class="project-title">
+          <span>Project 1: Perplexity Explorer</span>
+          <a href="https://perplexity-explorer-xi.vercel.app" target="_blank" rel="noopener noreferrer" style="font-size: 0.95rem; font-weight: 600;">Live Demo &nearr;</a>
+        </div>
+        <div class="tech-stack-list">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Transformers.js</span>
+          <span class="tech-tag">DistilGPT-2</span>
+          <span class="tech-tag">Vercel</span>
+        </div>
+
+        <div class="project-meta-grid">
+          <div class="detail-label">Repository &amp; Docs:</div>
+          <div>
+            <a href="https://github.com/omupadhyay0007/perplexity-explorer" target="_blank" rel="noopener noreferrer">
+              github.com/omupadhyay0007/perplexity-explorer
+            </a>
+            and the <a href="https://perplexity-explorer-xi.vercel.app" target="_blank" rel="noopener noreferrer">deployed application</a>.
+          </div>
+
+          <div class="detail-label">Problem Statement:</div>
+          <div>
+            Perplexity is a language-model metric that is difficult to interpret without seeing token probabilities and intermediate calculations. The project presents those calculations through an interactive educational interface.
+          </div>
+
+          <div class="detail-label">Solution Architecture:</div>
+          <div>
+            A browser application loads DistilGPT-2 through Transformers.js, tokenizes user text, runs causal-language-model inference, and displays token probabilities and perplexity calculations.
+          </div>
+
+          <div class="detail-label">Tech Stack:</div>
+          <div>
+            HTML, CSS, JavaScript, Transformers.js, Xenova/distilgpt2, browser-hosted tensors, and Vercel hosting.
+          </div>
+
+          <div class="detail-label">Individual Contribution:</div>
+          <div>
+            Sole developer. Built and deployed the interface, integrated browser-based model inference, and implemented the perplexity calculations and explanatory views.
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" id="project-2">
+        <div class="project-title">
+          <span>Project 2: LLM Pipeline Explorer</span>
+          <a href="https://llm-pipeline-explorer-liard.vercel.app" target="_blank" rel="noopener noreferrer" style="font-size: 0.95rem; font-weight: 600;">
+            Live Demo &nearr;
+          </a>
+        </div>
+        <div class="tech-stack-list">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">Vanilla JavaScript</span>
+          <span class="tech-tag">BPE</span>
+          <span class="tech-tag">WordPiece</span>
+          <span class="tech-tag">Canvas</span>
+          <span class="tech-tag">Vercel</span>
+        </div>
+
+        <div class="project-meta-grid">
+          <div class="detail-label">Repository &amp; Docs:</div>
+          <div>
+            <a href="https://github.com/omupadhyay0007/llm-pipeline-explorer" target="_blank" rel="noopener noreferrer">
+              github.com/omupadhyay0007/llm-pipeline-explorer
+            </a>
+            (repository configured as private) and the
+            <a href="https://llm-pipeline-explorer-liard.vercel.app" target="_blank" rel="noopener noreferrer">public live application</a>.
+          </div>
+
+          <div class="detail-label">Problem Statement:</div>
+          <div>
+            Large-language-model text processing is difficult to visualize because tokenization, vocabulary IDs, semantic relationships, and custom vocabulary changes happen in separate internal stages.
+          </div>
+
+          <div class="detail-label">Solution Architecture:</div>
+          <div>
+            A client-side HTML application processes text using selectable BPE, WordPiece, and whitespace tokenizers. It synchronizes token chips, token statistics, vocabulary tables, custom tokens, and a native Canvas-based 3D semantic embedding view.
+          </div>
+
+          <div class="detail-label">Tech Stack:</div>
+          <div>
+            HTML5, CSS3, vanilla JavaScript, Byte-Pair Encoding, WordPiece, Canvas rendering, semantic similarity calculations, and Vercel hosting.
+          </div>
+
+          <div class="detail-label">Individual Contribution:</div>
+          <div>
+            Sole developer. Built the interactive tokenizer interface, 3D semantic visualization, custom vocabulary workflow, synchronized data views, and deployed the application.
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 5: EDUCATION AND ACHIEVEMENTS (1 Mark) -->
+    <!-- Rubric: Academic background (degree, institution, expected graduation date) along with verified accomplishments 
+         (competitions, certifications, hackathons) with dates and verification links. -->
+    <section id="education">
+      <h2>
+        5. Education &amp; Achievements
+      </h2>
+
+      <!-- Academic Background -->
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <span class="degree-title">B.Tech. in Computer Science &amp; Artificial Intelligence</span>
+          <span class="timeline-date">Expected Graduation: 2030</span>
+        </div>
+        <div class="institution-name">Newton School of Technology</div>
+        <p style="margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--text-muted);">
+          <strong>Duration:</strong> 2026–2030 (4 years)
+        </p>
+        <p style="margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--text-muted);">
+          <strong>Field of Study:</strong> Computer Science &amp; Artificial Intelligence
+        </p>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: #1f2937;">Verified Achievements &amp; Certifications</h3>
+        <div class="achievement-card">
+          <div class="achievement-title">No additional verified achievements supplied</div>
+          <p style="margin: 0.4rem 0; font-size: 0.92rem; color: #064e3b;">
+            This section will list competitions, certifications, or hackathons only when a title, completion date, and public verification link are available.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT (1 Mark) -->
+    <!-- Rubric: Functional links to Professional Email, GitHub, and LinkedIn profiles. 
+         The GitHub handle must match the account used for course pull request submissions. -->
+    <section id="contact">
+      <h2>
+        6. Contact Information
+      </h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Feel free to reach out via email or connect across professional platforms. All profiles are publicly verifiable.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Professional Email -->
+        <div class="contact-card">
+          <h3>Professional Email</h3>
+          <a href="mailto:omupadhyay0007@gmail.com">
+            omupadhyay0007@gmail.com
+          </a>
+        </div>
+
+        <!-- GitHub Profile (Must match PR submission handle) -->
+        <div class="contact-card">
+          <h3>GitHub Profile</h3>
+          <a href="https://github.com/omupadhyay0007" target="_blank" rel="noopener noreferrer">
+            github.com/omupadhyay0007
+          </a>
+        </div>
+
+        <!-- LinkedIn Profile -->
+        <div class="contact-card">
+          <h3>LinkedIn Profile</h3>
+          <a href="https://www.linkedin.com/in/om-upadhyay-1302b541a/" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/om-upadhyay-1302b541a
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      &copy; 2026 Om Upadhyay &bull; Systems &amp; Artificial Intelligence (S&amp;AI) Portfolio &bull; 
+      Built in compliance with S&amp;AI Portfolio Rubric (Total: 10 Marks).
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+      Publicly accessible, self-contained, responsive, and verifiable across all major browsers.
+    </p>
+  </footer>
+
+</body>
+</html>
+
